@@ -2,4 +2,6 @@
     <w:pageHeader titleKey="Test"/>
     Hier kommt ganz viel devops Zeugs hin. (nicht übersetzt)<br>
     @i18n("Message") (übersetzt)
+    <br>
+    <b>Prometheus:</b><a href="/system/metrics">/system/metrics</a>
 </w:page>
