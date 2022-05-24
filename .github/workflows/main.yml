@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: docker.pkg.github.com/YannickXY/devops/devops:latest
+          tags: user/devops:latest
