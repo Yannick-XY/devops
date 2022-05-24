@@ -1,0 +1,30 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: scireum/sirius-build-jdk18:4.1
+    steps:
+      - name: checkout project
+        uses: actions/checkout@v1
+        
+      - name: build devops project
+        run: mvn clean compile test package
+     
+      - name: Login to GitHub Packages Docker Registry
+        uses: docker/login-action@v1
+        with:
+          registry: docker.pkg.github.com
+          username: YannickXY
+          password: ${{ secrets.KEY }}
+          
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: docker.pkg.github.com/YannickXY/devops/devops:latest
