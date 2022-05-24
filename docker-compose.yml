@@ -1,0 +1,53 @@
+version: "3.7"
+#TODO source-target, data path,
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    volumes:
+      - type: bind
+        source: /www/TODO/elasticsearch
+        target: /usr/share/elasticsearch/data
+    environment:
+      - ES_JAVA_OPTS=-Xms128M -Xmx128M
+      - discovery.type=single-node
+    hostname: es
+    networks:
+      - devops
+
+  mariadb:
+    image: mariadb:10.3.14-bionic
+    volumes:
+      - type: bind
+        source: /www/TODO/mariadb
+        target: /var/lib/mysql
+    hostname: mariadb
+    environment:
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - devops
+    command: --collation-server=utf8mb4_unicode_ci --character-set-server=utf8mb4
+
+  redis:
+    image: redis:6.2.6-alpine
+    hostname: redis
+    networks:
+      - devops
+
+  devops:
+    image: docker.pkg.github.com/YannickXY/dev-ops/dev-ops:latest
+    ports:
+      - "127.0.0.1:3333:9000"
+    volumes:
+      - type: bind
+        source: /www/TODO/instance.conf
+        target: /home/sirius/instance.conf
+      - type: bind
+        source: /www/TODO/data
+        target: /home/sirius/data
+    networks:
+      - devops
+
+networks:
+  devops:

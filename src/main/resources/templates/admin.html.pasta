@@ -1,0 +1,5 @@
+<w:page title="devops">
+    <w:pageHeader titleKey="Test"/>
+    Hier kommt ganz viel devops Zeugs hin. (nicht übersetzt)<br>
+    @i18n("Message") (übersetzt)
+</w:page>

@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    ports:
+      - "9200"
+    environment:
+      - ES_JAVA_OPTS=-Xms128M -Xmx128M
+      - discovery.type=single-node
+    hostname: es
+    networks:
+      - devops
+
+  mariadb:
+    image: mariadb:10.3.14-bionic
+    ports:
+      - "3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+    hostname: mariadb
+    networks:
+      - devops
+    command: --collation-server=utf8mb4_unicode_ci --character-set-server=utf8mb4
+
+  redis:
+    image: redis:6.2.6-alpine
+    ports:
+      - "6379"
+    hostname: redis
+    networks:
+      - devops
+
+networks:
+  devops:

@@ -1,0 +1,7 @@
+<i:arg type="String" name="point"/>
+
+<i:switch test="@point">
+    <i:block name="left">
+        <t:menuItem label="Neuer Menüeintrag" url="/"/>
+    </i:block>
+</i:switch>

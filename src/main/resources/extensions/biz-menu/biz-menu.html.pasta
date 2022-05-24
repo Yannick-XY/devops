@@ -1,0 +1,9 @@
+<i:arg type="String" name="point"/>
+
+<i:switch test="@point">
+    <i:block name="settings">
+        <w:menuSection>
+            <w:menuItem title="Neuer Dropdowneintrag" url="/invalid"/>
+        </w:menuSection>
+    </i:block>
+</i:switch>
