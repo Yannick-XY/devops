@@ -1,0 +1,1 @@
+On your machine navigate to /prod and type `docker-compose up` in your terminal to start the application with all components.
