@@ -1,12 +1,11 @@
 version: "3.7"
-#TODO source-target, data path,
 
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
     volumes:
       - type: bind
-        source: /www/TODO/elasticsearch
+        source: ./elasticsearch
         target: /usr/share/elasticsearch/data
     environment:
       - ES_JAVA_OPTS=-Xms128M -Xmx128M
@@ -16,15 +15,15 @@ services:
       - devops
 
   mariadb:
-    image: mariadb:10.3.14-bionic
+    image: mariadb:10.6.5-focal
     volumes:
       - type: bind
-        source: /www/TODO/mariadb
+        source: ./mariadb
         target: /var/lib/mysql
     hostname: mariadb
     environment:
-      MYSQL_DATABASE: root
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+      MYSQL_ROOT_PASSWORD: Mar1aD@t@b@§3
     networks:
       - devops
     command: --collation-server=utf8mb4_unicode_ci --character-set-server=utf8mb4
@@ -36,18 +35,21 @@ services:
       - devops
 
   devops:
-    image: ghcr.io/yannick-xy/devops/devops:latest
+    image: ghcr.io/yannick-xy/devops:latest
     ports:
-      - "127.0.0.1:3333:9000"
+      - "127.0.0.1:9000:9000"
     volumes:
       - type: bind
-        source: /www/TODO/instance.conf
+        source: ./instance.conf
         target: /home/sirius/instance.conf
       - type: bind
-        source: /www/TODO/data
+        source: ./data
         target: /home/sirius/data
     networks:
       - devops
+
+
+# add Grafana/Graylog/whatever
 
 networks:
   devops:

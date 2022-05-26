@@ -12,7 +12,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
         
-      - name: Compile, test and build devops project
+      - name: Build devops project
         run: mvn clean package
 
       - name: Login to GitHub Packages Docker Registry

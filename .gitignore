@@ -1,4 +1,7 @@
 .idea/*
 *.iml
 target/
-data/
+/data/
+/prod/data
+/prod/elasticsearch
+/prod/mariadb
