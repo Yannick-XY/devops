@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     container: scireum/sirius-build-jdk18:latest
     steps:
