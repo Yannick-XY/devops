@@ -36,7 +36,7 @@ services:
       - devops
 
   devops:
-    image: ghcr.io/yannick-xy/dev-ops/dev-ops:latest
+    image: ghcr.io/yannick-xy/devops/devops:latest
     ports:
       - "127.0.0.1:3333:9000"
     volumes:

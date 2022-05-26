@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/yannick-xy/dev-ops:latest
+          tags: ghcr.io/yannick-xy/devops:latest
