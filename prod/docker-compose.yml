@@ -49,8 +49,15 @@ services:
     networks:
       - devops
 
+# MONITORING
+# add Grafana/Graylog/whatever...
 
-# add Grafana/Graylog/whatever
+  prometheus:
+    build: prometheus
+    ports:
+      - "127.0.0.1:9090:9090"
+    networks:
+      - devops
 
 networks:
   devops:
