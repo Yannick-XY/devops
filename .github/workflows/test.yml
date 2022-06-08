@@ -10,5 +10,8 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
 
+      - name: Check running docker
+        run: docker ps -a
+
       - name: Compile and test devops project
         run: mvn clean compile test
