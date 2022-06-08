@@ -4,6 +4,8 @@ on:
 
 jobs:
   test:
+    env:
+      DOCKER_HOST: tcp://192.168.101.1:2375
     runs-on: ubuntu-latest
     container: scireum/sirius-build-jdk18:latest
     steps:
