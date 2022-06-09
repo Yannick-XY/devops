@@ -14,8 +14,6 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
 
-      - name: Check running docker-compose
-        run: docker-compose --version
-
+      #we only run tests without framework-start because of docker problems with DOCKER_HOST in GitHub actions
       - name: Compile and test devops project
-        run: mvn clean compile test
+        run: mvn clean compile test -Dtest.excluded.groups=local

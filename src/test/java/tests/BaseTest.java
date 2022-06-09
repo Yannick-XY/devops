@@ -1,6 +1,7 @@
 package tests;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import sirius.biz.tenants.TenantsHelper;
@@ -12,6 +13,7 @@ import sirius.web.http.TestResponse;
  *
  */
 
+@Tag("local")
 @ExtendWith(SiriusExtension.class)
 class BaseTest {
 
