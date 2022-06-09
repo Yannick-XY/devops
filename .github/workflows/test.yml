@@ -5,7 +5,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: scireum/sirius-build-jdk18:latest
+    container:
+      image: scireum/sirius-build-jdk18:latest
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
