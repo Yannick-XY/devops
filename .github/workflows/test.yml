@@ -3,7 +3,7 @@ on:
   pull_request:
 
 env:
-  SIRIUS_DOCKER_HOST: ""
+  SIRIUS_DOCKER_HOST: "127.0.0.1"
 
 jobs:
   test:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check running docker-compose
-        run: cd src/test/resources && docker-compose -f docker-compose-test.yml up
+        run: docker-compose --version
 
       - name: Compile and test devops project
         run: mvn clean compile test
