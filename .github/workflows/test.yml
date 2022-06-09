@@ -2,6 +2,9 @@ name: test
 on:
   pull_request:
 
+env:
+  SIRIUS_DOCKER_HOST: ""
+
 jobs:
   test:
     runs-on: ubuntu-latest
