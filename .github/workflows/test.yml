@@ -3,7 +3,7 @@ on:
   pull_request:
 
 env:
-  SIRIUS_DOCKER_HOST: "127.0.0.1"
+  SIRIUS_DOCKER_HOST: ""
 
 jobs:
   test:
