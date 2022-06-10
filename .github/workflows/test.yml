@@ -2,13 +2,18 @@ name: test
 on:
   pull_request:
 
+env:
+  SIRIUS_DOCKER_HOST: ""
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: scireum/sirius-build-jdk18:latest
+    container:
+      image: scireum/sirius-build-jdk18:latest
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
 
+      #we only run tests without framework-start because of docker problems with DOCKER_HOST in GitHub actions
       - name: Compile and test devops project
-        run: mvn clean compile test
+        run: mvn clean compile test -Dtest.excluded.groups=local
