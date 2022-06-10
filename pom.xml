@@ -68,7 +68,7 @@
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-web</artifactId>
-            <version>dev-49.1.0</version>
+            <version>dev-51.0.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
