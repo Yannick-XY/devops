@@ -62,5 +62,15 @@ services:
     networks:
       - devops
 
+  grafana:
+    image: grafana/grafana:8.5.5
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources # data sources -> prometheus
+      - ./grafana/data:/var/lib/grafana # data storage
+    networks:
+      - devops
+
 networks:
   devops:
