@@ -57,7 +57,8 @@ services:
     ports:
       - "127.0.0.1:9090:9090"
     volumes:
-      - ./prometheus:/etc/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml # configuration file
+      - ./prometheus/data:/prometheus # data storage
     networks:
       - devops
 
