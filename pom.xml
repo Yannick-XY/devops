@@ -49,26 +49,26 @@
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-biz</artifactId>
-            <version>dev-58.5.1</version>
+            <version>dev-59.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-biz</artifactId>
-            <version>dev-58.5.1</version>
+            <version>dev-59.0.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-kernel</artifactId>
-            <version>dev-30.2.0</version>
+            <version>dev-31.0.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-web</artifactId>
-            <version>dev-49.1.0</version>
+            <version>dev-51.0.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
