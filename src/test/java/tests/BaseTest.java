@@ -10,7 +10,8 @@ import sirius.web.http.TestRequest;
 import sirius.web.http.TestResponse;
 
 /**
- *
+ * Tests that check availability of the service and login-ability.
+ * Accessibility to restricted content is tested by setting up testUsers with specific permissions.
  */
 
 @Tag("local")
