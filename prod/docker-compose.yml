@@ -1,6 +1,23 @@
 version: "3.7"
 
 services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    volumes:
+      - type: bind
+        source: ./elasticsearch
+        target: /usr/share/elasticsearch/data
+    environment:
+      - ES_JAVA_OPTS=-Xms128M -Xmx128M
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    hostname: es
+    ports:
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
+    networks:
+      - devops
+
   mariadb:
     image: mariadb:10.6.5-focal
     volumes:
@@ -54,23 +71,6 @@ services:
     volumes:
       - ./grafana/datasources:/etc/grafana/provisioning/datasources # data sources -> prometheus
       - ./grafana/data:/var/lib/grafana # data storage
-    networks:
-      - devops
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
-    volumes:
-      - type: bind
-        source: ./elasticsearch
-        target: /usr/share/elasticsearch/data
-    environment:
-      - ES_JAVA_OPTS=-Xms128M -Xmx128M
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-    hostname: es
-    ports:
-      - "127.0.0.1:9200:9200"
-      - "127.0.0.1:9300:9300"
     networks:
       - devops
 
