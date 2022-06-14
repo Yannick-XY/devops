@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- *
+ * Dummy-Test to have one executable test in GitHub actions (build and test process).
  */
 public class DummyTest {
 
