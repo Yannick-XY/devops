@@ -10,3 +10,5 @@ datasources:
     jsonData:
       timeField: "tod"
       esVersion: 7.10.0
+      logMessageField: message
+      logLevelField: level
