@@ -12,6 +12,9 @@ services:
       - discovery.type=single-node
       - xpack.security.enabled=false
     hostname: es
+    ports:
+      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:9300:9300"
     networks:
       - devops
 
@@ -50,7 +53,6 @@ services:
       - devops
 
 # MONITORING
-# add Grafana/Graylog/whatever...
 
   prometheus:
     image: prom/prometheus:v2.36.0
