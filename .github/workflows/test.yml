@@ -14,6 +14,7 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
 
-      #we only run tests without framework-start because of docker problems with DOCKER_HOST in GitHub actions
+      # During workflow/job "test" on GitHub, tests are run only without framework-start because of sirius-kernel issues.
+      # Locally, tests are running well since the framework starts without any issues.
       - name: Compile and test devops project
         run: mvn clean compile test -Dtest.excluded.groups=local

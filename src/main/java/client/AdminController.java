@@ -9,7 +9,7 @@ import sirius.web.security.LoginRequired;
 import javax.annotation.Nonnull;
 
 /**
- * Provides a route to visit the backend page
+ * Provides a route to visit the backend page.
  */
 @Register
 public class AdminController extends BizController {
@@ -22,10 +22,8 @@ public class AdminController extends BizController {
     @LoginRequired
     @Routed("/admin")
     public void admin(@Nonnull WebContext webContext) {
-
         webContext.respondWith().template("/templates/admin.html.pasta");
     }
-
 
     public int test(int a, int b) {
         return a + b;
