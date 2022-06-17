@@ -12,7 +12,7 @@ import sirius.web.http.TestResponse;
 /**
  * Tests that check availability of the service and login-ability.
  * Accessibility to restricted pages is tested by setting up a testTenant and a testUser with specific permissions.
- * These tests can only be run locally because of sirius-kernel issues during workflow/job "test" on GitHub.
+ * These tests can only be run locally because of issues between Docker and sirius-kernel during workflow/job "build" & "test" on GitHub.
  */
 
 @Tag("local")

@@ -14,9 +14,9 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
 
-      # During workflow/job "test", tests are run only without framework-start
-      # because of problems between Docker, sirius-kernel and GitHub.
-      # Locally, tests are running well since the framework starts
-      # there without any issues.
+        # During workflow/job "test", functional tests are excluded because of
+        # framework-related problems between Docker and sirius-kernel on GitHub.
+        # Since the required framework for testing starts without any issues
+        # locally, all tests are executable there.
       - name: Compile and test devops project
         run: mvn clean compile test -Dtest.excluded.groups=local
