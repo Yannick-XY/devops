@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
-        
+
+      # During workflow/job "build", tests are run only without framework-start
+      # because of problems between Docker, sirius-kernel and GitHub.
+      # Locally, tests are running well since the framework starts
+      # there without any issues.
       - name: Build devops project
-        run: mvn clean package -DskipTests
+        run: mvn clean package -Dtest.excluded.groups=local
 
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@v2
