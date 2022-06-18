@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * A dummy test was created since the framework required for functional tests doesn't start during workflow/job "build" & "test" on GitHub.
  */
-public class DummyTest {
+class DummyTest {
 
     @Test
     void test() {
