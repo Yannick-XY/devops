@@ -1,4 +1,4 @@
 <w:page title="devops">
-    <w:pageHeader titleKey="Test"/>
-    <b>Prometheus:</b><a href="/system/metrics">/system/metrics</a>
+    <w:pageHeader titleKey="Welcome"/>
+    <b>Prometheus-metrics available on: </b><a href="/system/metrics">/system/metrics</a>
 </w:page>

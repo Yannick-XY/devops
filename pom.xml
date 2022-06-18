@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.scireum</groupId>
         <artifactId>sirius-parent</artifactId>
-        <version>10.0.0</version>
+        <version>10.1.1</version>
     </parent>
     <groupId>de.hdm-stuttgart.csm</groupId>
     <artifactId>devops</artifactId>
@@ -49,12 +49,12 @@
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-biz</artifactId>
-            <version>dev-59.0.0</version>
+            <version>dev-59.1.0</version>
         </dependency>
         <dependency>
             <groupId>com.scireum</groupId>
             <artifactId>sirius-biz</artifactId>
-            <version>dev-59.0.0</version>
+            <version>dev-59.1.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
