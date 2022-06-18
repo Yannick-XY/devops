@@ -11,9 +11,13 @@ jobs:
     steps:
       - name: Checkout project
         uses: actions/checkout@v3
-        
+
+      # During workflow/job "build", functional tests are excluded because of
+      # framework-related problems between Docker and sirius-kernel on GitHub.
+      # Since the required framework for testing starts without any issues
+      # locally, all tests are executable there.
       - name: Build devops project
-        run: mvn clean package -DskipTests
+        run: mvn clean package -Dtest.excluded.groups=local
 
       - name: Login to GitHub Packages Docker Registry
         uses: docker/login-action@v2
