@@ -2,6 +2,3 @@
 *.iml
 target/
 /data/
-/prod/data
-/prod/elasticsearch
-/prod/mariadb
