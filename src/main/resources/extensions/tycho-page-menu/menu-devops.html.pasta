@@ -3,6 +3,6 @@
 <i:switch test="@point">
     <i:block name="left">
         <t:menuItem label="Neuer Menüeintrag" url="/"/>
-        <t:dropdownItem label="Exportieren" url="/export"/>
+        <t:menuItem label="Exportieren" url="/"/>
     </i:block>
 </i:switch>
